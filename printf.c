@@ -63,7 +63,7 @@ int _printf(const char *format, ...)
 	va_start(ptr, format);
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
+		if (format[i] == '%' && (format[i + 1] == '%' || format[i + 1] == 0))
 		{
 			_putchar('%');
 			i += 2;
