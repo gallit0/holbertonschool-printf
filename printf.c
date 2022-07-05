@@ -8,12 +8,15 @@
 
 int _printf(const char *format, ...)
 {
+	va_list ptr;
+	data dat[] = {
+		{"c",p_char},
+		{"s",p_string},
+	};
 	unsigned int counter = 0;
 	unsigned int i = 0;
-	va_list ptr;
 
 	va_start(ptr, format);
-
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
@@ -22,7 +25,7 @@ int _printf(const char *format, ...)
 			i += 2;
 			counter++;
 		}
-		else if (format[i] == '%')
+		else if (format[i] == '%' && *dat[i + 1].type == format[i + 1])
 		{
 			
 		}
@@ -33,6 +36,5 @@ int _printf(const char *format, ...)
 			counter++;
 		}
 	}
-
 	return (counter);
 }
