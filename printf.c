@@ -57,11 +57,11 @@ int _printf(const char *format, ...)
 		{"c",p_char},
 		{"s",p_string},
 	};
-	unsigned int counter = 0;
-	int i = 0;
+	int counter = 0;
+	int i = 0, j;
 
 	va_start(ptr, format);
-	while (format[i])
+	while (format && format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
@@ -71,7 +71,11 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && *dat[i + 1].type == format[i + 1])
 		{
-			counter += dat[i + 1].f(ptr);
+			for (j = 0; j < 2; j++)
+			{
+				if (*dat[j].type == format[i + 1])
+					counter += dat[j].f(ptr);
+			}
 			i += 2;
 		}
 		else
