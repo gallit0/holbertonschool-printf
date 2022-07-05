@@ -69,7 +69,7 @@ int _printf(const char *format, ...)
 			i += 2;
 			counter++;
 		}
-		else if (format[i] == '%' && *dat[i + 1].type == format[i + 1])
+		else if (format[i] == '%')
 		{
 			for (j = 0; j < 2; j++)
 			{
