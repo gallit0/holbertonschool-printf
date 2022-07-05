@@ -27,7 +27,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && *dat[i + 1].type == format[i + 1])
 		{
-			
+			counter += dat[i + 1].f(ptr);
+			i += = 2;
 		}
 		else
 		{
