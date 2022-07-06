@@ -62,7 +62,7 @@ int p_int1(int n, int counter)
 		n = -n;
 	}
 	if (n/10)
-		return (p_int1, counter);
+		return (p_int1(n, counter);
 	_putchar((n%10) + '0');
 	return (counter);
 }
