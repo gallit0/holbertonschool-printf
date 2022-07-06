@@ -32,6 +32,7 @@ int p_string(va_list ptr)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
+		counter++;
 	}
 	else
 	{
