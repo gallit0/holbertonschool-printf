@@ -4,6 +4,7 @@
  * p_char - print char
  * @ptr: variadic list
  * Return: counter
+ *
  */
 
 int p_char(va_list ptr)
@@ -16,6 +17,7 @@ int p_char(va_list ptr)
  * p_string - print a string
  * @ptr: variadic list
  * Return: counter
+ *
  */
 
 int p_string(va_list ptr)
@@ -50,6 +52,7 @@ int p_string(va_list ptr)
  * check_printf - checks printf
  * @format: string
  * Return: -1 if mistake 1 if ok
+ *
  */
 
 int check_printf(const char *format)
@@ -66,6 +69,7 @@ int check_printf(const char *format)
  * @formi: char
  * @ptr: list
  * Return: int
+ *
  */
 
 int get_function(const char formi, va_list ptr)
@@ -90,6 +94,7 @@ int get_function(const char formi, va_list ptr)
  * _printf - print with format
  * @format: format of the string
  * Return: counter
+ *
  */
 
 int _printf(const char *format, ...)
