@@ -81,7 +81,7 @@ int get_function(const char formi, va_list ptr)
 			return (counter += dat[i].f(ptr));
 	}
 	_putchar(formi);
-	return (2)
+	return (2);
 }
 
 /**
@@ -94,7 +94,7 @@ int _printf(const char *format, ...)
 {
 	va_list ptr;
 	int counter = 0;
-	int i = 0, j;
+	int i = 0;
 
 	if (check_printf(format) == -1)
 		return (-1);
