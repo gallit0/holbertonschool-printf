@@ -48,7 +48,7 @@ int p_string(va_list ptr)
 
 /**
  * check_printf - checks printf
- * @
+ * @format: string
  * Return: -1 if mistake 1 if ok
  */
 
@@ -63,8 +63,9 @@ int check_printf(const char *format)
 
 /**
  * get_function - gets the function to use
- *
- * Return:
+ * @formi: char
+ * @ptr: list
+ * Return: int
  */
 
 int get_function(const char formi, va_list ptr)
@@ -80,6 +81,7 @@ int get_function(const char formi, va_list ptr)
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
 	}
+	_putchar('%');
 	_putchar(formi);
 	return (2);
 }
