@@ -62,6 +62,28 @@ int check_printf(const char *format)
 }
 
 /**
+ * get_function - gets the function to use
+ *
+ * Return:
+ */
+
+int get_function(const char formi, va_list ptr)
+{
+	data dat[] = {
+		{"c", p_char},
+		{"s", p_string},
+	};
+	int counter = 0, i;
+
+	for (i = 0; i < 2; i++)
+	{
+		if (*dat[j].type == formi)
+			return += dat[i].f(ptr);
+	}
+	_putchar(formi);
+}
+
+/**
  * _printf - print with format
  * @format: format of the string
  * Return: counter
@@ -70,10 +92,6 @@ int check_printf(const char *format)
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	data dat[] = {
-		{"c", p_char},
-		{"s", p_string},
-	};
 	int counter = 0;
 	int i = 0, j;
 
@@ -90,11 +108,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			for (j = 0; j < 2; j++)
-			{
-				if (*dat[j].type == format[i + 1])
-					counter += dat[j].f(ptr);
-			}
+			counter += get_function(format i + 1);
 			i += 2;
 		}
 		else
