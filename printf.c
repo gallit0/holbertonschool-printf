@@ -86,8 +86,11 @@ int _printf(const char *format, ...)
 			counter++;
 		}
 	}
-	if (!format)
-		_putchar(10);
 	va_end(ptr);
+	if (!format)
+	{
+		_putchar(10);
+		return(-1);
+	}
 	return (counter);
 }
