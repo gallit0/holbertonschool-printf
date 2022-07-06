@@ -54,7 +54,7 @@ int p_string(va_list ptr)
 
 int check_printf(const char *format)
 {
-	if (!format || format == "%")
+	if (!format || !strcmp(format, "%"))
 	{
 		return (-1);
 	}
