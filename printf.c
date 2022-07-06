@@ -70,7 +70,7 @@ int p_int(va_list ptr)
 		counter++;
 		n = n * -1;
 	}
-	for (; i < n; i *= 10)
+	for (; i <= n; i *= 10)
 		counter++;
 	i /= 10;
 	for (; i > 0; i /= 10)
