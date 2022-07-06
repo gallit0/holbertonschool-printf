@@ -104,7 +104,7 @@ int get_function(const char formi, va_list ptr)
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
