@@ -35,12 +35,12 @@ int p_string(va_list ptr)
 	}
 	else
 	{
-		while(s[counter])
+		while(*s)
 		{
-			_putchar(s[counter]);
+			_putchar(*s);
+			s++;
 			counter++;
 		}
-		counter--;
 	}
 	return (counter);
 }
