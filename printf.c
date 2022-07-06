@@ -68,7 +68,7 @@ int p_int(va_list ptr)
 	{
 		_putchar('-');
 		counter++;
-		n = -n;
+		n = n * -1;
 	}
 	for (; i < n; i *= 10)
 		counter++;
