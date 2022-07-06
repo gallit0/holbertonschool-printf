@@ -85,5 +85,6 @@ int _printf(const char *format, ...)
 			counter++;
 		}
 	}
+	va_end(ptr);
 	return (counter);
 }
