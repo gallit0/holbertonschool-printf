@@ -28,7 +28,8 @@ int p_string(va_list ptr)
 	{
 		_putchar('(');
 		_putchar('n');
-		_putchar('i');
+		_putchar('u');
+		_putchar('l');
 		_putchar('l');
 		_putchar(')');
 	}
@@ -61,7 +62,7 @@ int _printf(const char *format, ...)
 	int i = 0, j;
 
 	va_start(ptr, format);
-	while (format && format[i])
+	while (format[i])
 	{
 		if (format[i] == '%' && (format[i + 1] == '%' || format[i + 1] == 0))
 		{
