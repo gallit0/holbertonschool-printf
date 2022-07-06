@@ -62,6 +62,7 @@ int p_int(va_list ptr)
 	if (n == 0)
 	{
 		_putchar('0');
+		return (1);
 	}
 	if (n < 0)
 	{
