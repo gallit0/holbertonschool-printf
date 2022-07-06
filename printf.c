@@ -56,10 +56,13 @@ int p_string(va_list ptr)
 int p_int(va_list ptr)
 {
 	int n = va_arg(ptr, int);
-	int i;
+	int i = 1;
 	int counter = 0;
 
-	for (i = 1; i < n; i *= 10)
+	if (n < 0)
+		i = -i;
+
+	for (; i < n; i *= 10)
 	{
 	}
 	for (; i > 0; i %= 10)
