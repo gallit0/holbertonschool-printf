@@ -88,9 +88,6 @@ int _printf(const char *format, ...)
 	}
 	va_end(ptr);
 	if (!format)
-	{
-		_putchar(10);
 		return(-1);
-	}
 	return (counter);
 }
