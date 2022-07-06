@@ -67,6 +67,7 @@ int p_int(va_list ptr)
 	}
 	for (; i < n; i *= 10)
 		counter++;
+	i /= 10;
 	for (; i > 0; i /= 10)
 	{
 		_putchar(((n / i) % 10)+ '0');
