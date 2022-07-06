@@ -32,16 +32,15 @@ int p_string(va_list ptr)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
-		counter++;
 	}
 	else
 	{
-		while(*s)
+		while(s[counter])
 		{
-			_putchar(*s);
-			s++;
+			_putchar(s[counter]);
 			counter++;
 		}
+		counter--;
 	}
 	return (counter);
 }
@@ -87,6 +86,8 @@ int _printf(const char *format, ...)
 			counter++;
 		}
 	}
+	if (!format)
+		_putchar(10);
 	va_end(ptr);
 	return (counter);
 }
