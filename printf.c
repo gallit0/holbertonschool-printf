@@ -65,6 +65,7 @@ int p_int(va_list ptr)
 	for (; i > 0; i %= 10)
 	{
 		_putchar((n / i) + '0');
+		counter++;
 	}
 	return (counter);
 }
