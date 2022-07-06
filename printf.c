@@ -55,9 +55,9 @@ int p_string(va_list ptr)
 
 int p_int(va_list ptr)
 {
-	int n = va_arg(ptr, int);
+	long int n = va_arg(ptr, long int);
 	int counter = 0;
-	int i = 1;
+	long int i = 1;
 
 	if (n == 0)
 	{
