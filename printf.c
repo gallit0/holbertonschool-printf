@@ -56,20 +56,28 @@ int p_string(va_list ptr)
 int p_int(va_list ptr)
 {
 	int n = va_arg(ptr, int);
-	int i = 1;
 	int counter = 0;
 
-	if (n < 0)
-		i = -i;
+	counter = p_int1(n, counter);
+	return (counter);
+}
+/**
+ * p_int2 - print int and decimal
+ * @n: int
+ * Return: counter
+ */
+int p_int1(int n, int counter)
+{
+	counter++;
 
-	for (; i < n; i *= 10)
+	if (n < 0)
 	{
+		_putchar('-');
+		n = -n;
 	}
-	for (; i > 0; i %= 10)
-	{
-		_putchar((n / i) + '0');
-		counter++;
-	}
+	if (n/10)
+		return (p_int1, counter);
+	_putchar((n%10) + '0');
 	return (counter);
 }
 
