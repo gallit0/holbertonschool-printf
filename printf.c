@@ -48,6 +48,28 @@ int p_string(va_list ptr)
 }
 
 /**
+ * p_int - print int and decimal
+ * @ptr: list
+ * Return: counter
+ */
+
+int p_int(va_list ptr)
+{
+	int n = va_arg(ptr, int);
+	int i;
+	int counter = 0;
+
+	for (i = 1; i < n; i *= 10)
+	{
+	}
+	for (; i > 0; i %= 10)
+	{
+		_putchar((n / i) + '0');
+	}
+	return (counter);
+}
+
+/**
  * check_printf - checks printf
  * @format: string
  * Return: -1 if mistake 1 if ok
@@ -76,6 +98,8 @@ int get_function(const char formi, va_list ptr)
 	data dat[] = {
 		{"c", p_char},
 		{"s", p_string},
+		{"d", p_int},
+		{"i", p_int},
 	};
 	int counter = 0, i;
 
