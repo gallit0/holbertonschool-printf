@@ -48,21 +48,7 @@ int p_string(va_list ptr)
 }
 
 /**
- * p_int - print int and decimal
- * @ptr: list
- * Return: counter
- */
-
-int p_int(va_list ptr)
-{
-	int n = va_arg(ptr, int);
-	int counter = 0;
-
-	counter = p_int1(n, counter);
-	return (counter);
-}
-/**
- * p_int2 - print int and decimal
+ * p_int1 - print int and decimal
  * @n: int
  * Return: counter
  */
@@ -78,6 +64,20 @@ int p_int1(int n, int counter)
 	if (n/10)
 		return (p_int1, counter);
 	_putchar((n%10) + '0');
+	return (counter);
+}
+/**
+ * p_int - print int and decimal
+ * @ptr: list
+ * Return: counter
+ */
+
+int p_int(va_list ptr)
+{
+	int n = va_arg(ptr, int);
+	int counter = 0;
+
+	counter = p_int1(n, counter);
 	return (counter);
 }
 
