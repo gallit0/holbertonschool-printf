@@ -109,7 +109,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			counter += get_function(format[i] + 1);
+			counter += get_function(format[i] + 1, ptr);
 			i += 2;
 		}
 		else
