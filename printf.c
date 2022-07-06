@@ -36,7 +36,7 @@ int p_string(va_list ptr)
 	}
 	else
 	{
-		while(*s)
+		while (*s)
 		{
 			_putchar(*s);
 			s++;
@@ -44,6 +44,21 @@ int p_string(va_list ptr)
 		}
 	}
 	return (counter);
+}
+
+/**
+ * check_printf - checks printf
+ * @
+ * Return: -1 if mistake 1 if ok
+ */
+
+int check_printf(const char *format)
+{
+	if (!format || format == "%")
+	{
+		return (-1);
+	}
+	return (1);
 }
 
 /**
@@ -56,12 +71,14 @@ int _printf(const char *format, ...)
 {
 	va_list ptr;
 	data dat[] = {
-		{"c",p_char},
-		{"s",p_string},
+		{"c", p_char},
+		{"s", p_string},
 	};
 	int counter = 0;
 	int i = 0, j;
 
+	if (check_printf(format) == -1)
+		return (-1);
 	va_start(ptr, format);
 	while (format && format[i])
 	{
@@ -88,7 +105,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(ptr);
-	if (!format)
-		return(-1);
 	return (counter);
 }
