@@ -77,10 +77,11 @@ int get_function(const char formi, va_list ptr)
 
 	for (i = 0; i < 2; i++)
 	{
-		if (*dat[j].type == formi)
-			return += dat[i].f(ptr);
+		if (*dat[i].type == formi)
+			return (counter += dat[i].f(ptr));
 	}
 	_putchar(formi);
+	return (2)
 }
 
 /**
@@ -108,7 +109,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			counter += get_function(format i + 1);
+			counter += get_function(format[i] + 1);
 			i += 2;
 		}
 		else
