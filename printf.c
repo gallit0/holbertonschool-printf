@@ -4,7 +4,6 @@
  * p_char - print char
  * @ptr: variadic list
  * Return: counter
- *
  */
 
 int p_char(va_list ptr)
