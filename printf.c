@@ -99,7 +99,7 @@ int p_bin(va_list ptr)
 	{
 		p[j] = (n / i) % 2;
 	}
-	for (i = 0, j = (strlen(p)); i < (strlen(p) / 2); i++, j--)
+	for (i = 0, j = counter; i < (counter / 2); i++, j--)
 	{
 		temp = p[i];
 		p[i] = p[j];
