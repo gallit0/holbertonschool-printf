@@ -79,11 +79,11 @@ int p_int(va_list ptr)
 	}
 	return (counter);
 }
-int p_binary(int n)
+int p_binary(unsigned int n)
 {
 	int counter = 0;
-	if (n == 0)
-		return(_putchar('0'));
+	if (n <= 1)
+		return(_putchar('0' + n));
 	counter = p_binary(n / 2);
 	return (_putchar('0' + n % 2) + counter);
 }
@@ -94,7 +94,7 @@ int p_binary(int n)
  */
 int p_bin(va_list ptr)
 {
-	int n = va_arg(ptr, int);
+	unsigned int n = va_arg(ptr, unsigned int);
 
 	return (p_binary(n));
 }
