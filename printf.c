@@ -85,6 +85,7 @@ int p_int(va_list ptr)
 int p_bin(va_list ptr)
 {
 	int i, j = 0;
+	int temp = 0;
 	int counter = 0;
 	int n = va_arg(ptr, int);
 	int *p;
@@ -97,6 +98,16 @@ int p_bin(va_list ptr)
 	for (i = 2; (n / i) > 1; i *= 2, j++)
 	{
 		p[j] = (n / i) % 2;
+	}
+	for (i = 0, j = (strlen(p)); i < (strlen(p) / 2); i++, j--)
+	{
+		temp = p[i];
+		p[i] = p[j];
+		p[j] = temp;
+	}
+	for (i = 0; p[i]; i++)
+	{
+		_putchar(p[i]);
 	}
 	return (counter);
 }
