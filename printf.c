@@ -79,37 +79,24 @@ int p_int(va_list ptr)
 	}
 	return (counter);
 }
+int p_binary(int n)
+{
+	int counter = 0;
+	if (n == 0)
+		return(_putchar('0'));
+	counter = p_binary(n / 2);
+	return (_putchar('0' + n % 2) + counter);
+}
 /**
- *
+ * p_bin - print a binary first function
+ * @ptr: variadic list
+ * Return: to function p_binary
  */
 int p_bin(va_list ptr)
 {
-	int i, j = 0;
-	int temp = 0;
-	int counter = 0;
 	int n = va_arg(ptr, int);
-	int *p;
 
-	for (i = 2; (n / i) > 1; i *= 2)
-	{
-		counter++;
-	}
-	p = malloc((sizeof(int) * counter) + sizeof(int));
-	for (i = 2; (n / i) > 1; i *= 2, j++)
-	{
-		p[j] = (n / i) % 2;
-	}
-	for (i = 0, j = counter; i < (counter / 2); i++, j--)
-	{
-		temp = p[i];
-		p[i] = p[j];
-		p[j] = temp;
-	}
-	for (i = 0; p[i]; i++)
-	{
-		_putchar(p[i]);
-	}
-	return (counter);
+	return (p_binary);
 }
 /**
  * check_printf - checks printf
