@@ -79,7 +79,27 @@ int p_int(va_list ptr)
 	}
 	return (counter);
 }
+/**
+ *
+ */
+int p_bin(va_list ptr)
+{
+	int i, j = 0;
+	int counter = 0;
+	int n = va_arg(ptr, int);
+	int *p;
 
+	for (i = 2; (n / i) > 1; i *= 2)
+	{
+		counter++;
+	}
+	p = malloc((sizeof(int) * counter) + sizeof(int));
+	for (i = 2; (n / i) > 1; i *= 2, j++)
+	{
+		p[j] = (n / i) % 2;
+	}
+	return (counter);
+}
 /**
  * check_printf - checks printf
  * @format: string
@@ -111,10 +131,11 @@ int get_function(const char formi, va_list ptr)
 		{"s", p_string},
 		{"d", p_int},
 		{"i", p_int},
+		{"b", p_bin},
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 5; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
