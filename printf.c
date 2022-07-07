@@ -96,7 +96,7 @@ int p_bin(va_list ptr)
 {
 	int n = va_arg(ptr, int);
 
-	return (p_binary);
+	return (p_binary(n));
 }
 /**
  * check_printf - checks printf
