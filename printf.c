@@ -166,7 +166,7 @@ int p_HEXADECIMAL(unsigned int n)
 
 	if (n <= 15)
 		return (_putchar(p[n]));
-	counter = p_hexadecimal(n / 16);
+	counter = p_HEXADECIMAL(n / 16);
 	return (_putchar(p[n % 16]) + counter);
 }
 int p_HEX(va_list ptr)
