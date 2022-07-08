@@ -210,6 +210,7 @@ int p_STRING(va_list ptr)
 		else
 		{
 			_putchar(str[i]);
+			counter++;
 		}
 	}
 	return (counter);
