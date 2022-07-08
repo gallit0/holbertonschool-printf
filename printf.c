@@ -203,6 +203,7 @@ int p_STRING(va_list ptr)
 			if(str[i] <= 15)
 			{
 				_putchar('0');
+				counter++;
 			}
 			counter += p_HEXADECIMAL(str[i]);
 		}
