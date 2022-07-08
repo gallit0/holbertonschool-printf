@@ -176,6 +176,29 @@ int p_HEX(va_list ptr)
 	return (p_HEXADECIMAL(n));
 }
 /**
+ * Print a string with conversion of ascii values
+ */
+int p_STRING(va_list ptr)
+{
+	int counter = 0;
+	char *str = va_arg(ptr, char *);
+	int i;
+
+	for(i = 0; str[i]; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			counter += (2 + p_hexadecimal(str[i]));
+		}
+		else
+		{
+			_putchar(str[i]);
+		}
+	}
+}
+/**
  * check_printf - checks printf
  * @format: string
  * Return: -1 if mistake 1 if ok
@@ -211,10 +234,11 @@ int get_function(const char formi, va_list ptr)
 		{"o", p_oct},
 		{"x", p_hex},
 		{"X", p_HEX},
+		{"S", p_STRING},
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
