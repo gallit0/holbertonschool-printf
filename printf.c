@@ -199,7 +199,8 @@ int p_STRING(va_list ptr)
 		{
 			_putchar('\\');
 			_putchar('x');
-			counter += (2 + p_hexadecimal(str[i]));
+			counter += 2;
+			counter += p_hexadecimal(str[i]);
 		}
 		else
 		{
