@@ -143,7 +143,7 @@ int p_oct(va_list ptr)
 /**
  * Print decimal to hexadecimal in lowercase
  */
-int p_hexadecimal(unsigned int n)
+int p_hexadimal(unsigned int n)
 {
 	int counter = 0;
 	char *p = "0123456789abcdef";
@@ -158,19 +158,6 @@ int p_hex(va_list ptr)
 	unsigned int n = va_arg(ptr, unsigned int);
 
 	return (p_hexadecimal(n));
-}
-int p_HEXADECIMAL(n)
-{
-	int counter = 0;
-	char *p = "0123456789ABCDEF";
-
-	
-}
-int p_HEX(va_list ptr)
-{
-	unsigned int n = va_arg(ptr, unsigned int);
-
-	return (p_HEXADECIMAL(n));
 }
 /**
  * check_printf - checks printf
@@ -207,11 +194,10 @@ int get_function(const char formi, va_list ptr)
 		{"u", p_un_int},
 		{"o", p_oct},
 		{"x", p_hex},
-		{"X", p_HEX},
 	};
 	int counter = 0, i;
 
-	for (i = 0; dat[i]; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
