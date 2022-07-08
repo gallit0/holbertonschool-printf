@@ -159,7 +159,7 @@ int p_hex(va_list ptr)
 
 	return (p_hexadecimal(n));
 }
-int p_HEXADECIMAL(n)
+int p_HEXADECIMAL(unsigned int n)
 {
 	int counter = 0;
 	char *p = "0123456789ABCDEF";
@@ -214,7 +214,7 @@ int get_function(const char formi, va_list ptr)
 	};
 	int counter = 0, i;
 
-	for (i = 0; dat[i]; i++)
+	for (i = 0; *dat[i]; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
