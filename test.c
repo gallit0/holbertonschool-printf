@@ -8,7 +8,7 @@ int main(void)
 	_printf("%u\n", n);
 	
 	printf("%o\n", n2);
-	_printf("%o\n", n2;
+	_printf("%o\n", n2);
 
 
 

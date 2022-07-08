@@ -131,7 +131,7 @@ int p_octal(unsigned int n)
 	int counter = 0;
 	if (n <= 7)
 		return (_putchar(n + '0'));
-	counter = p_binary(n / 8);
+	counter = p_octal(n / 8);
 	return (_putchar('0' + n % 8) + counter);
 }
 int p_oct(va_list ptr)
@@ -177,7 +177,7 @@ int get_function(const char formi, va_list ptr)
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
