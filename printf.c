@@ -164,7 +164,10 @@ int p_HEXADECIMAL(n)
 	int counter = 0;
 	char *p = "0123456789ABCDEF";
 
-	
+	if (n <= 15)
+		return (_putchar(p[n]));
+	counter = p_hexadecimal(n / 16);
+	return (_putchar(p[n % 16]) + counter);
 }
 int p_HEX(va_list ptr)
 {
