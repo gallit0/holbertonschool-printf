@@ -200,7 +200,11 @@ int p_STRING(va_list ptr)
 			_putchar('\\');
 			_putchar('x');
 			counter += 2;
-			counter += p_hexadecimal(str[i]);
+			if(str[i] <= 15)
+			{
+				_putchar('0');
+			}
+			counter += p_HEXADECIMAL(str[i]);
 		}
 		else
 		{
