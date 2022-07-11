@@ -234,9 +234,9 @@ int p_STRING(va_list ptr)
  */
 int p_revstring(va_list ptr)
 {
-	int counter = 0;
 	char *str = va_arg(ptr, char *);
 	int len = strlen(str);
+	int counter = len;
 
 	if (!str)
 		return (0);
@@ -245,7 +245,6 @@ int p_revstring(va_list ptr)
 	{
 		_putchar(*(str + len));
 		len--;
-		counter++;
 	}
 	return (counter);
 }
