@@ -234,16 +234,21 @@ int p_STRING(va_list ptr)
  */
 int p_revstring(va_list ptr)
 {
-	int counter = 0, i;
+	int counter = 0;
 	char *str = va_arg(ptr, char *);
 
 	if (str == NULL)
 		return (0);
-	for (i = 0; str[i]; i++)
+	while (*str)
+	{
 		counter++;
-	i++;
-	for (; i > 0; i--)
+		str++;
+	}
+	while (*str)
+	{
 		_putchar(str[i]);
+		str--;
+	}
 	return (counter);
 }
 /**
