@@ -215,6 +215,19 @@ int p_STRING(va_list ptr)
 	}
 	return (counter);
 }
+
+/**
+ * p_point - print a pointer to a space in memory
+ */
+int p_point(va_list ptr)
+{
+	int counter = 0;
+	int *p = va_arg(ptr, int *);
+
+	counter += p_hexadecimal(p);
+	return (counter);
+}
+
 /**
  * check_printf - checks printf
  * @format: string
@@ -252,10 +265,11 @@ int get_function(const char formi, va_list ptr)
 		{"x", p_hex},
 		{"X", p_HEX},
 		{"S", p_STRING},
+		{"p", p_point}.
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
