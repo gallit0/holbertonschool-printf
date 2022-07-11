@@ -239,8 +239,9 @@ int p_revstring(va_list ptr)
 
 	if (str == NULL)
 		return (0);
-	for (i = 0; str[i] != NULL; i++)
+	for (i = 0; str[i]; i++)
 		counter++;
+	i++;
 	for (; i > 0; i--)
 		_putchar(str[i]);
 	return (counter);
