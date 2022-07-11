@@ -263,7 +263,6 @@ int p_revstring(va_list ptr)
 int check_printf(const char *format)
 {
 	if (!format || !strcmp(format, "%"))
-	
 		return (-1);
 	}
 	return (1);
