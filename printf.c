@@ -256,13 +256,13 @@ int p_rot13(va_list ptr)
 
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] >= 'a' && str[i] <= 'n')
+		if (str[i] >= 'a' && str[i] < 'n')
 			_putchar(str[i] + 13);
-		else if (str[i] > 'n' && str[i] <= 'z')
+		else if (str[i] >= 'n' && str[i] <= 'z')
 			_putchar(str[i] - 13);
-		else if (str[i] >= 'A' && str[i] <= 'N')
+		else if (str[i] >= 'A' && str[i] < 'N')
 			_putchar(str[i] + 13);
-		else if (str[i] > 'N' && str[i] <= 'Z')
+		else if (str[i] >= 'N' && str[i] <= 'Z')
 			_putchar(str[i] - 13);
 		else
 			_putchar(str[i]);
