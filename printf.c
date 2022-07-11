@@ -1,4 +1,17 @@
 #include "main.h"
+#include <unistd.h>
+
+/**
+ ** _putchar - writes the character c to stdout
+ ** @c: The character to print
+ **
+ ** Return: On success 1.
+ ** On error, -1 is returned, and errno is set appropriately.
+ **/
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 
 /**
  * p_char - print char
@@ -227,7 +240,22 @@ int p_point(va_list ptr)
 	counter += p_hexadecimal(p);
 	return (counter);
 }
+/**
+ * p_revstring - prints a string in reverse
+ */
+int p_revstring(va_list ptr)
+{
+	int counter = 0, i;
+	char *str = va_arg(ptr, char *);
 
+	if (str == NULL)
+		return (0);
+	for (i = 0; str[i]; i++)
+		counter++
+	for (; i > 0; i--)
+		_putchar(str[i]);
+	return (counter);
+}
 /**
  * check_printf - checks printf
  * @format: string
@@ -265,11 +293,12 @@ int get_function(const char formi, va_list ptr)
 		{"x", p_hex},
 		{"X", p_HEX},
 		{"S", p_STRING},
-		{"p", p_point}.
+		{"p", p_point},
+		{"r", p_revstring}
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 12; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
