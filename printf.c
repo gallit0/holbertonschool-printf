@@ -230,17 +230,6 @@ int p_STRING(va_list ptr)
 }
 
 /**
- * p_point - print a pointer to a space in memory
- */
-int p_point(va_list ptr)
-{
-	int counter = 0;
-	int *p = va_arg(ptr, int *);
-
-	counter += p_hexadecimal(p);
-	return (counter);
-}
-/**
  * p_revstring - prints a string in reverse
  */
 int p_revstring(va_list ptr)
@@ -293,12 +282,11 @@ int get_function(const char formi, va_list ptr)
 		{"x", p_hex},
 		{"X", p_HEX},
 		{"S", p_STRING},
-		{"p", p_point},
 		{"r", p_revstring}
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 12; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
