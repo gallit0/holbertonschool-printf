@@ -236,7 +236,7 @@ int p_revstring(va_list ptr)
 {
 	char *str = va_arg(ptr, char *);
 	int len = strlen(str) - 1;
-	int counter = len;
+	int counter = len + 1;
 
 	if (!str)
 		return (0);
