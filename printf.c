@@ -240,7 +240,7 @@ int p_revstring(va_list ptr)
 	if (str == NULL)
 		return (0);
 	for (i = 0; str[i]; i++)
-		counter++
+		counter++;
 	for (; i > 0; i--)
 		_putchar(str[i]);
 	return (counter);
