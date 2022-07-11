@@ -264,7 +264,6 @@ int check_printf(const char *format)
 {
 	if (!format || !strcmp(format, "%"))
 		return (-1);
-	}
 	return (1);
 }
 
