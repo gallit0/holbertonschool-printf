@@ -235,19 +235,20 @@ int p_STRING(va_list ptr)
 int p_revstring(va_list ptr)
 {
 	int counter = 0;
+	int i = 0;
 	char *str = va_arg(ptr, char *);
 
 	if (str == NULL)
 		return (0);
-	while (*str)
+	while (str[i])
 	{
 		counter++;
-		str++;
+		i++;
 	}
-	while (*str)
+	while (i > 0)
 	{
-		_putchar(*str);
-		str--;
+		_putchar(str[i]);
+		i++;
 	}
 	return (counter);
 }
