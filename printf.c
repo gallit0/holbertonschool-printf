@@ -245,6 +245,7 @@ int p_revstring(va_list ptr)
 	{
 		_putchar(*(str + len));
 		len--;
+		counter++;
 	}
 	return (counter);
 }
