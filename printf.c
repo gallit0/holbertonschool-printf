@@ -248,6 +248,28 @@ int p_revstring(va_list ptr)
 	}
 	return (counter);
 }
+int p_rot13(va_list ptr)
+{
+	char *str = va_arg(ptr, char *);
+	int i;
+	int counter = 0;
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] >= 'a' && str[i] <= 'n')
+			_putchar(str[i] + 13);
+		else if (str[i] > 'n' && str[i] <= 'z')
+			_putchar(str[i] - 13);
+		else if (str[i] >= 'A' && str[i] <= 'N')
+			_putchar(str[i] + 13);
+		else if (str[i] > 'N' && str[i] <= 'Z')
+			_puchar(str[i] - 13);
+		else
+			_puchar(str[i]);
+		counter++;
+	}
+	return (counter);
+}
 /**
  * check_printf - checks printf
  * @format: string
@@ -283,12 +305,13 @@ int get_function(const char formi, va_list ptr)
 		{"x", p_hex},
 		{"X", p_HEX},
 		{"S", p_STRING},
-		{"r", p_revstring}
+		{"r", p_revstring},
+		{"R", p_rot13},
 	};
 	int counter = 0, i;
 
-	for (i = 0; i < 11; i++)
-	{
+	for (i = 0; i < 12; i++)
+	{i
 		if (*dat[i].type == formi)
 			return (counter += dat[i].f(ptr));
 	}
