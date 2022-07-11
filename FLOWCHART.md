@@ -8,5 +8,5 @@ graph TD;
 	If1-->|No|If2{Is the character '%'}
 	If2-->|Yes|Call0[Call get_function]-->While0
 	If2-->|No|Put1[Print character]-->While0
-	While0-->Return1(Return counter of chars)
+	While0-->|No more characters|Return1(Return counter of chars)
 ```
