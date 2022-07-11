@@ -263,9 +263,9 @@ int p_rot13(va_list ptr)
 		else if (str[i] >= 'A' && str[i] <= 'N')
 			_putchar(str[i] + 13);
 		else if (str[i] > 'N' && str[i] <= 'Z')
-			_puchar(str[i] - 13);
+			_putchar(str[i] - 13);
 		else
-			_puchar(str[i]);
+			_putchar(str[i]);
 		counter++;
 	}
 	return (counter);
