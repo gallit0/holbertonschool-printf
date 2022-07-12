@@ -4,6 +4,9 @@ _Printf
 
 Printf is a function that is used to printf an array of chars and at the same time choose a format for that string.
 Besides the format, it is able to recieve all of the parameters for its format, such as integers, strings, chars, etc.
+To compile, you may use the GCC compiler. The following line is the way you are intended to compile it so it is ready to use.
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 
 _Printf functions
@@ -38,6 +41,12 @@ Does the same as "%x" but uppercase.
 
 %S
 Prints an array of chars but replaces non printable characters to their value in hexadecimal.
+
+%r
+Prints an array of chars in reverse.
+
+%R
+Prints an array of chars encrypted with ROT13.
 
 _Printf behavior
 ================
